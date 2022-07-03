@@ -1,4 +1,4 @@
-from pessoa import Pessoa
+from class_pessoas import Pessoa
 
 class Amigos(Pessoa):
     def __init__ (self, nome, idade, endereco):

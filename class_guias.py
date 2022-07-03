@@ -1,5 +1,5 @@
-from pessoa import Pessoa
-from trilha import Trilha
+from class_pessoas import Pessoa
+
 
 class Guia (Pessoa):
     def __init__ (self, nome, idade, endereco, valor_medio_trilha):
@@ -12,4 +12,4 @@ class Guia (Pessoa):
 
     @valor_medio_trilha.setter
     def valor_medio_trilha (self):
-        return 'O valor médio da trilha não pode ser alterado'
+        raise ValueError ('O valor médio da trilha não pode ser alterado')

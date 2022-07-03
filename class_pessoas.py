@@ -1,7 +1,4 @@
-from guia import Guia
-from trilha import Trilha
-from amigos import Amigos
-from familia import Familia
+from class_guias import Guia
 
 class Pessoa:
     def __init__ (self, tipo, nome, idade, endereco):
