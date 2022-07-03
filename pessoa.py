@@ -24,7 +24,7 @@ class Pessoa:
             return self.tipo == Amigos
 
 
-    @property 
+    @property #property
     def nome (self):
         return self.nome
 
