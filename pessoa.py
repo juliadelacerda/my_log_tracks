@@ -1,8 +1,3 @@
-from class_amigos import Amigos
-from class_familia import Familia
-from class_guias import Guia
-
-
 class Pessoa:
     def __init__ (self, tipo, nome, idade, endereco):
         self.tipo = tipo #Guia, amigo ou familia
