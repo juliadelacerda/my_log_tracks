@@ -1,7 +1,5 @@
-from class_guias import Guia
 from trilha import Trilha
-from class_amigos import Amigos
-from class_familia import Familia
+from pessoa import Pessoa
 
 guia1 = Guia(' ', 0, ' ')
 amigo1 = Amigos(' ', 0, ' ')
