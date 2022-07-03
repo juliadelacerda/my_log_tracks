@@ -1,4 +1,4 @@
-from class_pessoas import Pessoa
+from pessoa import Pessoa
 
 class Trilha:
     def __init__ (self, distancia_total, grau_dificuldade, nome, localizacao):

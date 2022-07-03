@@ -1,4 +1,7 @@
+from class_amigos import Amigos
+from class_familia import Familia
 from class_guias import Guia
+
 
 class Pessoa:
     def __init__ (self, tipo, nome, idade, endereco):
@@ -49,3 +52,30 @@ class Pessoa:
     @endereco.setter
     def endereco (self):
         raise ValueError ("O endereço não pode ser alterado")
+
+
+
+
+class Guia (Pessoa):
+    def __init__ (self, nome, idade, endereco, valor_medio_trilha):
+        super().__init__(nome, idade, endereco)
+        self.valor_medio_trilha = valor_medio_trilha
+
+    @property
+    def valor_medio_trilha(self):
+        return self.valor_medio_trilha
+
+    @valor_medio_trilha.setter
+    def valor_medio_trilha (self):
+        raise ValueError ('O valor médio da trilha não pode ser alterado')
+
+
+class Amigos(Pessoa):
+    def __init__ (self, nome, idade, endereco):
+        super().__init__(nome, idade, endereco)
+
+
+class Familia(Pessoa):
+    def __init__(self, nome, idade, endereco):
+        super().__init__(self, nome, idade, endereco)
+
