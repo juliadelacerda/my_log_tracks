@@ -17,16 +17,36 @@ Mais de 10 pessoas na trilha: -5 pts
 amigo1 = Amigos(' ', 0, ' ') #nome, idade, endereco
 familia1 = Familia(' ', 0, ' ') #nome, idade, endereco
 trilha1 = Trilha('', 0, ' ', ' ')
-guia1 = Guia('', 0, 'a', 0.0) #nome, idade, endereço, valor médio por trilha    
+guia1 = Guia('', 0, 'a', 0.0) #nome, idade, endereço, valor médio por trilha 
 
 
 # tem_guia = False
-qtd_pessoas = 0
+
 pontuacao_total = 0
 
+def cadastraTrilha(): 
+    print('-- Cadastro de trilha: \n')
+    trilha1.distancia_total = float(input('Digite a distância total da trilha em km: '))
+    trilha1.grau_dificuldade = input('Digite o grau de dificuldade da trilha (fácil, médio, difícil): ')
+    trilha1.localizacao = input('Digite a localização da trilha: ')
+    trilha1.nome = input('Dê um nome a sua trilha: \n')
+    input('Aperte ENTER para começar a cadastrar as pessoas que foram à trilha com você!')
+    
+    qtd_pessoas = int(input('Quantas pessoas você deseja cadastrar?\n'))
+    
+    cont = 1
+
+    qtd_pessoas = 0
+
+    while cont <= qtd_pessoas:
+        print(f'\n -- Cadastro da  {cont}° pessoa: \n')
+        cadastraPessoa() 
+        cont += 1
+
+    print('Cadastro concluído com sucesso!')
+
 def cadastraPessoa ():
-    print('\n -- Cadastro de pessoa: \n')
-    global qtd_pessoas #torna a variável global
+    # global qtd_pessoas #torna a variável global
     global pontuacao_total
 
 
@@ -39,8 +59,6 @@ def cadastraPessoa ():
         amigo1.endereco = input('3. Endereço: ')
 
         qtd_pessoas += 1 # Adiciona o amigo cadastrado à quantidade total de pessoas
-        print('Amigo cadastrado com sucesso!')
-
 
         #pontuação
         pontuacao_total += 15 #Motivo: +1 amigo
@@ -48,7 +66,7 @@ def cadastraPessoa ():
         if amigo1.idade < 18:
             pontuacao_total += 10
 
-        print('Amigo cadastrado com sucesso! Aperte ENTER para ver sua pontuação\n')
+        print('Amigo cadastrado com sucesso!\n')
 
 
     elif tipo_pessoa == 'familia':
@@ -65,7 +83,7 @@ def cadastraPessoa ():
         if familia1.idade < 18:
             pontuacao_total += 10
 
-        print('Membro da família cadastrado com sucesso! Aperte ENTER para ver sua pontuação \n')
+        print('Membro da família cadastrado com sucesso!\n')
 
 
     elif tipo_pessoa == 'guia':
@@ -81,7 +99,7 @@ def cadastraPessoa ():
         if guia1.idade < 18:
             pontuacao_total += 10
 
-        print('Guia cadastrado com sucesso! Aperte ENTER para ver sua pontuação \n')
+        print('Guia cadastrado com sucesso!\n')
 
     else: 
         raise ValueError('Informação inválida!')
@@ -98,9 +116,11 @@ def mostraPontuacao():
     print('--------------------------------------- \n')
 
 
+
 # Decoração
 print ('\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 print ('----------------- Bem vindo ao My Log Tracks ---------------------------')
-
-cadastraPessoa()
+print ('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n')
+input('Aperte ENTER para cadastrar uma nova trilha')
+cadastraTrilha()
 mostraPontuacao()
