@@ -9,35 +9,37 @@ class Trilha:
         self.pessoa = Pessoa
 
         @property 
-        def distanciaTotal (self):
-            return self.distancia_total
+        def distancia_total (self):
+            return self._distancia_total
 
         @distancia_total.setter
-        def distanciaTotal (self):
-            return 'Não foi possível alterar a distância total'
+        def distancia_total (self, nova_distancia_total):
+            self._distancia_total = nova_distancia_total
+
 
         @property
-        def grauDificuldade (self):
-            return self.grau_dificuldade
+        def grau_dificuldade (self):
+            return self._grau_dificuldade
 
         @grau_dificuldade.setter
-        def grauDificuldade (self):
-            return 'Não foi possível alterar o grau de dificuldade'
+        def grau_dificuldade (self, novo_grauDificuldade):
+            self._grau_dificuldade = novo_grauDificuldade
+
 
         @property
         def nome (self):
-            return self.nome
+            return self._nome
 
         @nome.setter
-        def nome (self):
-            return "Não foi possível alterar o nome"
+        def nome (self, novo_nome_trilha):
+            self._nome = novo_nome_trilha
 
+        
         @property
         def localizacao (self):
-            return self.localizacao
+            return self._localizacao
 
         @localizacao.setter
-        def localizacao (self):
-            return "Não foi possível alterar a localização"
-
+        def localizacao (self, nova_localizacao):
+            self._localizacao = nova_localizacao
         
