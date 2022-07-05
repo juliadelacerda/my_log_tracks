@@ -23,30 +23,10 @@ guia1 = Guia('', 0, 'a', 0.0) #nome, idade, endereço, valor médio por trilha
 # tem_guia = False
 
 pontuacao_total = 0
-
-def cadastraTrilha(): 
-    print('-- Cadastro de trilha: \n')
-    trilha1.distancia_total = float(input('Digite a distância total da trilha em km: '))
-    trilha1.grau_dificuldade = input('Digite o grau de dificuldade da trilha (fácil, médio, difícil): ')
-    trilha1.localizacao = input('Digite a localização da trilha: ')
-    trilha1.nome = input('Dê um nome a sua trilha: \n')
-    input('Aperte ENTER para começar a cadastrar as pessoas que foram à trilha com você!')
-    
-    qtd_pessoas = int(input('Quantas pessoas você deseja cadastrar?\n'))
-    
-    cont = 1
-
-    qtd_pessoas = 0
-
-    while cont <= qtd_pessoas:
-        print(f'\n -- Cadastro da  {cont}° pessoa: \n')
-        cadastraPessoa() 
-        cont += 1
-
-    print('Cadastro concluído com sucesso!')
+qtd_pessoas = 0
 
 def cadastraPessoa ():
-    # global qtd_pessoas #torna a variável global
+    global qtd_pessoas #torna a variável global
     global pontuacao_total
 
 
@@ -109,17 +89,52 @@ def cadastraPessoa ():
         pontuacao_total -= 5
 
 
+def cadastraTrilha(): 
+    print('-- Cadastro de trilha: \n')
+    trilha1.distancia_total = float(input('1. Digite a distância total da trilha em km: '))
+    trilha1.grau_dificuldade = input('2. Digite o grau de dificuldade da trilha (fácil, médio, difícil): ')
+    trilha1.localizacao = input('3. Digite a localização da trilha: ')
+    trilha1.nome = input('4. Dê um nome a sua trilha: ')
+    input('\nAperte ENTER para começar a cadastrar as pessoas que foram à trilha com você!')
+    
+
+    qtd_pessoas_a_cadastrar = int(input('\nQuantas pessoas você deseja cadastrar?\n'))
+    
+    cont = 1
+    qtd_pessoas = 0
+
+
+    while cont <= qtd_pessoas_a_cadastrar:
+        print(f'\n -- Cadastro da  {cont}° pessoa: \n')
+        cadastraPessoa() 
+        cont += 1
+
+    print('\nCadastro concluído com sucesso!')
+
+
 def mostraPontuacao():
     print('---------------------------------------')
     print('|         Pontuação Total             |')
     print(f'|              {pontuacao_total} pts                 |')
     print('--------------------------------------- \n')
 
+def mostraTabela():
+    print('\n                TABELA DE PONTOS                ')
+    print('------------------------------------------------')
+    print('| +1 MEMBRO DA FAMÍLIA          ||   +20 pts   |')
+    print('| +1 AMIGO                      ||   +15 pts   |')
+    print('| +1 Guia                       ||   -5 pts    |')
+    print('| +1 MENOR DE IDADE             ||   +10 pts   |')
+    print('| +10 PESSOAS NO TOTAL          ||   -5 pts    |')
+    print('------------------------------------------------\n\n')
+
 
 # Decoração
 print ('\n\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
 print ('----------------- Bem vindo ao My Log Tracks ---------------------------')
 print ('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n')
-input('Aperte ENTER para cadastrar uma nova trilha')
+input('Aperte ENTER para cadastrar uma nova trilha\n\n')
 cadastraTrilha()
 mostraPontuacao()
+input('\nAperte ENTER para ver a tabela de pontos!\n')
+mostraTabela()
