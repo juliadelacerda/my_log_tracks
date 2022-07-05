@@ -4,15 +4,6 @@ from pessoa import Amigos
 from pessoa import Familia
 from pessoa import Guia
 
-'''
-Pontuacao:
-1 Amigo: +15
-1 Membro da família: + 20 pts
-1 guia: -5 pts
-1 pessoa menor de idade: + 10 pts
-Mais de 10 pessoas na trilha: -5 pts
-'''
-
 
 amigo1 = Amigos(' ', 0, ' ') #nome, idade, endereco
 familia1 = Familia(' ', 0, ' ') #nome, idade, endereco
