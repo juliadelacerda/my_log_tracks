@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/issues-closed/juliadelacerda/my_log_tracks.svg">
 </p>
 
-> Status: Developing 
+> Status: Done ✅ 
 ##
 
 <p>
