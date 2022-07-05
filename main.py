@@ -80,6 +80,7 @@ def cadastraPessoa ():
         pontuacao_total -= 5
 
 
+
 def cadastraTrilha(): 
     print('-- Cadastro de trilha: \n')
     trilha1.distancia_total = float(input('1. Digite a distância total da trilha em km: '))
@@ -103,11 +104,13 @@ def cadastraTrilha():
     print('\nCadastro concluído com sucesso!')
 
 
-def mostraPontuacao():
+# Mostra tabelinha com a pontuação total
+def mostraPontuacao(): 
     print('---------------------------------------')
     print('|         Pontuação Total             |')
     print(f'|              {pontuacao_total} pts                 |')
     print('--------------------------------------- \n')
+
 
 def mostraTabela():
     print('\n                TABELA DE PONTOS                ')
